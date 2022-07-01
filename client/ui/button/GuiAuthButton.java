@@ -1,0 +1,105 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.Destroy.client.ui.button;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.PositionedSoundRecord;
+import net.minecraft.client.audio.SoundHandler;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.init.SoundEvents;
+
+public class GuiAuthButton
+extends GuiButton {
+    private final int fade = 20;
+
+    public GuiAuthButton(int LL\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, int \u0445L\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, int L\u0445\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, String \u0445\u0445\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL) {
+        \u0445\u0445L\u0445L\u0445LL\u0445\u0445\u0445LLLL(LL\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, \u0445L\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, L\u0445\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL, 200, 20, \u0445\u0445\u0445\u0445L\u0445LL\u0445\u0445\u0445LLLL);
+        GuiAuthButton \u0445\u0445L\u0445L\u0445LL\u0445\u0445\u0445LLLL;
+    }
+
+    public GuiAuthButton(int \u0445L\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, int L\u0445\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, int \u0445\u0445\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, int LLLLLL\u0445L\u0445\u0445\u0445LLLL, int \u0445LLLLL\u0445L\u0445\u0445\u0445LLLL, String L\u0445LLLL\u0445L\u0445\u0445\u0445LLLL) {
+        super(\u0445L\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, L\u0445\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, \u0445\u0445\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL, LLLLLL\u0445L\u0445\u0445\u0445LLLL, \u0445LLLLL\u0445L\u0445\u0445\u0445LLLL, L\u0445LLLL\u0445L\u0445\u0445\u0445LLLL);
+        GuiAuthButton LL\u0445\u0445\u0445\u0445LL\u0445\u0445\u0445LLLL;
+    }
+
+    @Override
+    protected int getHoverState(boolean L\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL) {
+        GuiAuthButton \u0445L\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL;
+        int \u0445\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL = 1;
+        if (!\u0445L\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL.enabled) {
+            \u0445\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL = 0;
+        } else if (L\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL) {
+            \u0445\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL = 2;
+        }
+        return \u0445\u0445\u0445\u0445LL\u0445L\u0445\u0445\u0445LLLL;
+    }
+
+    @Override
+    public void drawButton(Minecraft L\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL, int \u0445\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL, int LLLLL\u0445\u0445L\u0445\u0445\u0445LLLL, float \u0445LLLL\u0445\u0445L\u0445\u0445\u0445LLLL) {
+        GuiAuthButton \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL;
+        if (\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.visible) {
+            FontRenderer L\u0445L\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL = L\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.fontRendererObj;
+            L\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.getTextureManager().bindTexture(BUTTON_TEXTURES);
+            GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
+            \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.hovered = \u0445\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL >= \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.xPosition && LLLLL\u0445\u0445L\u0445\u0445\u0445LLLL >= \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.yPosition && \u0445\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL < \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.xPosition + \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width && LLLLL\u0445\u0445L\u0445\u0445\u0445LLLL < \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.yPosition + \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.height;
+            int \u0445\u0445L\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL = \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.getHoverState(\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.hovered);
+            GlStateManager.enableBlend();
+            GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+            \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.drawTexturedModalRect(\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.xPosition, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.yPosition, 0, 46 + \u0445\u0445L\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL * 20, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width / 2, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.height);
+            \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.drawTexturedModalRect(\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.xPosition + \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width / 2, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.yPosition, 200 - \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width / 2, 46 + \u0445\u0445L\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL * 20, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width / 2, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.height);
+            \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.mouseDragged(L\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL, \u0445\u0445\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL, LLLLL\u0445\u0445L\u0445\u0445\u0445LLLL);
+            int LL\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL = 0xE0E0E0;
+            if (!\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.enabled) {
+                LL\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL = 0xA0A0A0;
+            } else if (\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.hovered) {
+                LL\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL = 0xFFFFA0;
+            }
+            \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.drawCenteredString(L\u0445L\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.displayString, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.xPosition + \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.width / 2, \u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.yPosition + (\u0445L\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL.height - 8) / 2, LL\u0445\u0445\u0445L\u0445L\u0445\u0445\u0445LLLL);
+        }
+    }
+
+    @Override
+    protected void mouseDragged(Minecraft L\u0445L\u0445L\u0445\u0445L\u0445\u0445\u0445LLLL, int \u0445\u0445L\u0445L\u0445\u0445L\u0445\u0445\u0445LLLL, int LL\u0445\u0445L\u0445\u0445L\u0445\u0445\u0445LLLL) {
+    }
+
+    @Override
+    public void mouseReleased(int L\u0445\u0445\u0445L\u0445\u0445L\u0445\u0445\u0445LLLL, int \u0445\u0445\u0445\u0445L\u0445\u0445L\u0445\u0445\u0445LLLL) {
+    }
+
+    @Override
+    public boolean mousePressed(Minecraft LL\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL, int \u0445L\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL, int L\u0445\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL) {
+        GuiAuthButton \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL;
+        return \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.enabled && \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.visible && \u0445L\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL >= \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.xPosition && L\u0445\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL >= \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.yPosition && \u0445L\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL < \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.xPosition + \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.width && L\u0445\u0445L\u0445\u0445\u0445L\u0445\u0445\u0445LLLL < \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.yPosition + \u0445\u0445LL\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.height;
+    }
+
+    @Override
+    public boolean isMouseOver() {
+        GuiAuthButton \u0445\u0445L\u0445\u0445\u0445\u0445L\u0445\u0445\u0445LLLL;
+        return \u0445\u0445L\u0445\u0445\u0445\u0445L\u0445\u0445\u0445LLLL.hovered;
+    }
+
+    @Override
+    public void drawButtonForegroundLayer(int L\u0445\u0445\u0445\u0445\u0445\u0445L\u0445\u0445\u0445LLLL, int \u0445\u0445\u0445\u0445\u0445\u0445\u0445L\u0445\u0445\u0445LLLL) {
+    }
+
+    @Override
+    public void playPressSound(SoundHandler L\u0445LLLLL\u0445\u0445\u0445\u0445LLLL) {
+        L\u0445LLLLL\u0445\u0445\u0445\u0445LLLL.playSound(PositionedSoundRecord.getMasterRecord(SoundEvents.UI_BUTTON_CLICK, 1.0f));
+    }
+
+    @Override
+    public int getButtonWidth() {
+        GuiAuthButton \u0445L\u0445LLLL\u0445\u0445\u0445\u0445LLLL;
+        return \u0445L\u0445LLLL\u0445\u0445\u0445\u0445LLLL.width;
+    }
+
+    @Override
+    public void setWidth(int L\u0445L\u0445LLL\u0445\u0445\u0445\u0445LLLL) {
+        \u0445LL\u0445LLL\u0445\u0445\u0445\u0445LLLL.width = L\u0445L\u0445LLL\u0445\u0445\u0445\u0445LLLL;
+    }
+}
+
